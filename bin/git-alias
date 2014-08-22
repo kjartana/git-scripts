@@ -5,7 +5,7 @@
 # (MIT License).
 
 case $# in
-  0) git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort ;;
+  0) git config --get-regexp 'alias.*' | sed 's/[ ]/ = git /' | sed 's/alias\./git /' | sort ;;
   1) git alias | grep -e "$1" ;;
   *) git config --global "alias.$1" "$2" ;;
 esac
