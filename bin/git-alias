@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Originally taken from
+# [visionmedia/git-extras](https://github.com/visionmedia/git-extras)
+# (MIT License).
+
 case $# in
   0) git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort ;;
   1) git alias | grep -e "$1" ;;
