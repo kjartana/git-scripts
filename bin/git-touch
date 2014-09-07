@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Originally taken from
+# [visionmedia/git-extras](https://github.com/visionmedia/git-extras)
+# (MIT License).
+
+filename="$*"
+
+test -z "$filename" && echo "filename required" 1>&2 && exit 1
+
+touch "$filename" \
+  && git add "$filename"
